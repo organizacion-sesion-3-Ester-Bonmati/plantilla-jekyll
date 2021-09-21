@@ -10,31 +10,18 @@
 
   <body>
 
-    <header>
-      {% include header.html %}
-    </header>
+    <h2>Listado Posts </h2>
+    
+    <ul>
+        {% for post in site.posts % }
 
-    <nav>
-      {% include nav.html %}
-    </nav>
-
-    <aside>
-      {% include aside.html %}
-    </aside>
-
-    <section>
-   {{---
-  layout: layout
-  title: blog
-  permalink: /blog.html
----
-      <p>{{ page.date }}</p>
-}}
-    </section>
-
-    <footer>
-      {% include footer.html %}
-    </footer>
+        <li>
+          <a href="{{site.baseurl}}{{post.url}}">{{ post.title}}{{post.date }} </a> 
+          <p>{{ post.content }}</p>
+       </li>
+      {% endfor %}
+    </ul>
+    
 
   </body>
 
