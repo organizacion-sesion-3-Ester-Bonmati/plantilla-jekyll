@@ -5,3 +5,10 @@ permalink: /galeria
 ---
 
 <p>Página de galería de imágenes<p>
+  <ul>
+  {% for post in site.imagenes %}
+    <li>
+      <a href="{{ imagenes.url }}">{{ imagenes.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
